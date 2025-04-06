@@ -1,6 +1,6 @@
 # 🎓 Previsão de Notas do ENEM com KNN
 
-Este projeto utiliza dados públicos do ENEM 2023 para prever as notas de um(a) candidato(a) com base em suas características socioeconômicas, usando o algoritmo K-Nearest Neighbors (KNN).
+Este projeto utiliza dados públicos do ENEM para prever as notas de um(a) candidato(a) com base em suas características socioeconômicas, usando o algoritmo K-Nearest Neighbors (KNN).
 
 ---
 
@@ -20,7 +20,16 @@ O script `adjustData.py` realiza:
 
 - Leitura e limpeza dos microdados brutos;
 - Filtro para manter apenas os participantes válidos e completos;
-- Seleção das variáveis mais relevantes;
+- Seleção das variáveis mais relevantes (    'TP_COR_RACA',
+    'TP_ESCOLA',
+    'SG_UF_PROVA',
+    'NU_NOTA_CN',
+    'NU_NOTA_CH',
+    'NU_NOTA_LC',
+    'NU_NOTA_MT',
+    'NU_NOTA_REDACAO',
+    'Q002',
+    'Q006')
 - Criação do arquivo `dados_filtrados.csv` contendo os dados prontos para o treinamento.
 
 ### 2. **Treinamento do Modelo**
@@ -55,12 +64,12 @@ Além das notas previstas, a aplicação compara os resultados do(a) candidato(a
 ### 1. Instale as dependências
 
 ```bash
-pip install -r requirements.txt
+pip install pandas scikit-learn streamlit joblib numpy
 ```
 
 ### 2. Prepare os dados
 
-Certifique-se de que o arquivo original do INEP (`MICRODADOS_ENEM_2023.csv`) esteja na pasta do projeto.
+Certifique-se de que o arquivo original do INEP (`MICRODADOS_ENEM_****.csv`) esteja na pasta do projeto. - Escolha o ano do ENEM que deseja analisar
 
 Execute:
 
@@ -108,7 +117,3 @@ A aplicação oferece uma interface intuitiva feita com Streamlit, onde é poss�
 Essas comparações ajudam a entender o desempenho previsto dentro de um contexto social semelhante.
 
 ---
-
-## 📎 Licença
-
-Este projeto é livre para uso educacional e segue os termos de uso dos dados disponibilizados pelo INEP.
